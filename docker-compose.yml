@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+
+  # mysql
+  mysql:
+    build:
+      context: ./mysql
+      args:
+          - MYSQL_DATABASE=wordpress
+          - MYSQL_USER=wordpress
+          - MYSQL_PASSWORD=wordpress
+          - MYSQL_ROOT_PASSWORD=MagicMySQLRootPassword
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "8801:3306"
+
+  # wordpress
+  wordpress:
+    image: wordpress:php7.1-apache
+    volumes:
+      - ../wordpress:/var/www/html
+    ports:
+      - "8800:80"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: MagicMySQLRootPassword
+
+volumes:
+  mysql:
+    driver: "local"
