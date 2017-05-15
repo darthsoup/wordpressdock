@@ -11,8 +11,11 @@ Download and run the following command
 ```sh
 docker-compose up -d wordpress-php71
 ```
+Supported PHP Versions:
 
-Supported Versions
+ - 7.1 `wordpress-php71`
+ - 7.0 `wordpress-php70`
+ - 5.6 `wordpress-php56`
 
 ## Contributions
 
