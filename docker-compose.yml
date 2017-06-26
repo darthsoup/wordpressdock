@@ -30,7 +30,7 @@ services:
 
   # wordpress-php70
   wordpress-php70:
-    image: wordpress:php7.1-apache
+    image: wordpress:php7.0-apache
     volumes:
       - ../wordpress:/var/www/html
     ports:
@@ -42,7 +42,7 @@ services:
 
   # wordpress-php56
   wordpress-php56:
-    image: wordpress:php7.1-apache
+    image: wordpress:php5.6-apache
     volumes:
       - ../wordpress:/var/www/html
     ports:
