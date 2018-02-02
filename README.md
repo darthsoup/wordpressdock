@@ -13,6 +13,7 @@ docker-compose up -d wordpress-php71
 ```
 Supported PHP Versions:
 
+ - 7.2 `wordpress-php72`
  - 7.1 `wordpress-php71`
  - 7.0 `wordpress-php70`
  - 5.6 `wordpress-php56`

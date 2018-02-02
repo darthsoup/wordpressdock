@@ -16,6 +16,18 @@ services:
     ports:
       - "8801:3306"
 
+  # wordpress-php72
+  wordpress-php72:
+    image: wordpress:php7.2-apache
+    volumes:
+      - ../wordpress:/var/www/html
+    ports:
+      - "8800:80"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: MagicMySQLRootPassword
+
   # wordpress-php71
   wordpress-php71:
     image: wordpress:php7.1-apache
